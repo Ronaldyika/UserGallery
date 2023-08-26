@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block title %}Register user{% endblock %}
+
+
+{% block content %}
+
+<div class="contianer">
+    <div class="row mx-4">
+        <div class="col-md-4 sm-12 mt-5 content-section ">
+            <div class="media">
+                <img src="{{ user.profile.image.url }}" class="rounded-circle" style="width: 2rem;height: 2rem;" alt="{{ user.username }}">
+
+                <div class="media-body mx-4">
+                    <h5><a href="" style="color: aqua;">{{ user.username }}</a></h5>
+                    <p>{{ user.email }}</p>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}
