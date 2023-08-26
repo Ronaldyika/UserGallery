@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block title %}Gallery{% endblock %}
+
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <h5 class="display-5">
+            <p>Yika's</p>
+            Welcome to Gallery
+        </h5><br>
+
+            {% for i in query%}
+            <div class="col mt-5" >
+                <img style="width: 80%;height: 80%;" src="{{ i.imageID.image.url}}" alt="collection">
+                <h5 class="display-5 text-center">Uploaded By <a href="">{{ i.user_id.username }}</a></h5>
+            </div>
+            {% endfor %}
+    </div>
+    <div class="btn"><a href="{% url 'upload_gallery' %}">Upload image</a></div>
+    
+</div>
+
+{% endblock %}

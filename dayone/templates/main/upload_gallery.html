@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}Gallery_Upload{% endblock %}
+
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.image }}
+            </div>
+            <div class="button">
+                <button class="btn btn-info" type="submit">upload</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+{% endblock %}

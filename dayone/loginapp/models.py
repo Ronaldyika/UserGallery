@@ -8,3 +8,15 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+
+class Collection(models.Model):
+    image = models.ImageField(default="default.jpg",upload_to='gallery')
+
+class UserCollection(models.Model):
+    user_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    imageID = models.ForeignKey(Collection,on_delete=models.CASCADE)
+    
+
+
+
