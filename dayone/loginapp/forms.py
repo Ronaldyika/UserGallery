@@ -10,4 +10,6 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['username','email','password1','password2']
 
 class GalleryForm(forms.Form):
-    image = forms.ModelChoiceField(queryset=UserCollection.objects.all())
+    class Meta:
+        model = UserCollection
+        fields = '__all__'

@@ -44,15 +44,12 @@ def gallery(request):
 #uploading pictures to gallery
 
 def gallery_upload(request):
-    if request.method=='POST':
-        form = GalleryForm(request.POST,request.FILES)
+    if request.method == 'POST':
+        form = GalleryForm(request.POST)
         if form.is_valid():
-           
-            print('items taken')
-        else:
-            form = GalleryForm()
-            return render(request,'main/upload_gallery.html')
-
+            print("User saved")
+            return redirect('login')
     else:
         form = GalleryForm()
-        return render(request,'main/upload_gallery.html')
+
+        return render(request, 'main/upload_gallery.html', {'form': form})
