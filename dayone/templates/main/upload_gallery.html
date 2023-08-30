@@ -9,7 +9,7 @@
         <form action="" method="post">
             {% csrf_token %}
             <div class="form-group ">
-                {{ form }}
+                {{ form.as_p }}
             </div>
             <div class="button">
                 <button class="btn btn-info" type="submit">upload</button>
